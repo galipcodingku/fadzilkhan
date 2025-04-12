@@ -646,31 +646,57 @@ body.dark-mode .hireMe-svg-side {
 .self-taught-col {
     padding-left: 60px;
 }
+
 .about-detail-main {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: minmax(100px, 160px) 1fr;
     padding-bottom: 10px;
+    align-items: start;
+    gap: 5px;
 }
+
 .about-detail {
     color: var(--sub-text);
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
-    line-height: 24px;
-    max-width: 160px;
-    width: 100%;
+    line-height: 20px;
+    word-break: break-word;
 }
+
 .about-detail-info {
     color: var(--main-text);
-    font-size: 18px;
+    font-size: 13px;
     font-weight: 500;
-    line-height: 24px;
-    width: 340px;
+    line-height: 20px;
+    position: relative;
+    padding-left: 20px;
+    word-break: break-word;
 }
+
 .about-detail-info::before {
     content: ":";
+    position: absolute;
+    left: 0;
     color: var(--sub-text);
-    margin-right: 30px;
 }
+
+/* Responsive tweaks (bukan layout berubah, tapi skala menyesuaikan) */
+@media screen and (max-width: 600px) {
+    .about-detail-main {
+        grid-template-columns: minmax(80px, 140px) 1fr;
+    }
+
+    .about-detail,
+    .about-detail-info {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .about-detail-info {
+        padding-left: 18px;
+    }
+}
+
 .about-deatils-head {
     margin-top: 20px;
 }
